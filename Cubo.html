@@ -1,0 +1,33 @@
+<script>
+    window.onload = () => {
+        bounce = document.createElement("div")
+        bounce.style.backgroundColor = "black"
+        bounce.style.position = "absolute"
+        bounce.style.width = "100px"
+        bounce.style.height = "100px"
+        document.body.appendChild(bounce)
+        
+        x=0
+        y=0
+        xvel=1
+        yvel=1
+        setInterval(()=>{
+            if(x<0) {
+                xvel=1
+            } else if(x>window.innerWidth-100) {
+                xvel=-1
+            }
+            if(y<0) {
+                yvel=1
+            } else if(y>window.innerHeight-100) {
+                yvel=-1
+            }
+            x+=xvel*5
+            y+=yvel*5
+            bounce.style.left = x+"px"
+            bounce.style.top = y+"px"
+        },1000/60)
+    }
+    </script>
+    
+    
